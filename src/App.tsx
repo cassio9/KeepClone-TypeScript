@@ -16,6 +16,7 @@ function App() {
 		localStorage.setItem("KeepClone", JSON.stringify(noteArray));
 	}, [noteArray]);
 
+	//transform state data in HTML using react fc
 	const NoteHtml = noteArray.map((note) => {
 		return (
 			<Notes
