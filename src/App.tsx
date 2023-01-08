@@ -6,12 +6,12 @@ import KeepLogo from "./assets/keeps.png";
 import { NoteInterface } from "./interfaces/interfaces";
 
 function App() {
+	//state
 	const [noteArray, setNoteArray] = useState<NoteInterface[]>(
 		JSON.parse(localStorage.getItem("KeepClone")!) || []
 	);
 
-	console.log(noteArray);
-
+	//keep localStorage updated, useEffect checks every time noteArray changes
 	useEffect(() => {
 		localStorage.setItem("KeepClone", JSON.stringify(noteArray));
 	}, [noteArray]);
